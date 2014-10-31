@@ -5,7 +5,14 @@ Adapted from [http://www.kerrywong.com/2014/10/19/using-arduino-dues-true-random
 
 `trng` is a small Go package that provides an `io.ReadCloser` of random entropy which can be used for cryptographic purposes.
 
-The project is based on the work of Kerry D. Wong. The major change 
+The project is based on the work of Kerry D. Wong, who demonstrated how to extract the random data from the onboard TRNG generator on the SAM3X chip that powers the Arduino Due.
+
+The major change from Wong's work is the raw 32bit output of the TRNG is transmitted to the host and can be directly used as a source of random entropy (Wong's work transmitted the data as string representation of a 32bit signed integer). 
+
+documentation
+-------------
+
+[https://godoc.org/github.com/davecheney/trng](godoc.org/github.com/davecheney/trng)
 
 performance
 -----------
@@ -21,7 +28,7 @@ usage
 -----
 
 1. Load the `ardunio-due-trng` sketch onto your Ardunio Due. It has to be a SAM3X powered device, older 8bit Atmega Arduinos do not have the hardware trng device.
-2. Either use this package, see the example in godoc, or use the supplied `random-bits` example program.
+2. Either use this package, see the [https://godoc.org/github.com/davecheney/trng#example-Open](example in godoc), or use the supplied `random-bits` example program.
 
    % random-bits | dieharder -a -g 200
 
