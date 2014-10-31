@@ -1,6 +1,13 @@
 package trng_test
 
-func ExampleTrngOpen() {
+import (
+	"crypto/tls"
+	"net"
+
+	"github.com/davecheney/trng"
+)
+
+func ExampleOpen() {
 	// open random source
 	rand, _ := trng.Open("/dev/ttyACM0")
 
