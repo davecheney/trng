@@ -1,7 +1,7 @@
 trng
 ----
 
-Adapted from [http://www.kerrywong.com/2014/10/19/using-arduino-dues-true-random-number-generator/](www.kerrywong.com/2014/10/19/using-arduino-dues-true-random-number-generator/)
+Adapted from [www.kerrywong.com/2014/10/19/using-arduino-dues-true-random-number-generator/](http://www.kerrywong.com/2014/10/19/using-arduino-dues-true-random-number-generator/)
 
 `trng` is a small Go package that provides an `io.ReadCloser` of random entropy which can be used for cryptographic purposes.
 
@@ -12,7 +12,7 @@ The major change from Wong's work is the raw 32bit output of the TRNG is transmi
 documentation
 -------------
 
-[https://godoc.org/github.com/davecheney/trng](godoc.org/github.com/davecheney/trng)
+[godoc.org/github.com/davecheney/trng](https://godoc.org/github.com/davecheney/trng)
 
 performance
 -----------
@@ -28,7 +28,7 @@ usage
 -----
 
 1. Load the `ardunio-due-trng` sketch onto your Ardunio Due. It has to be a SAM3X powered device, older 8bit Atmega Arduinos do not have the hardware trng device.
-2. Either use this package, see the [https://godoc.org/github.com/davecheney/trng#example-Open](example in godoc), or use the supplied `random-bits` example program.
+2. Either use this package, see the [example in godoc](https://godoc.org/github.com/davecheney/trng#example-Open), or use the supplied `random-bits` example program.
 
    % random-bits | dieharder -a -g 200
 
@@ -38,4 +38,3 @@ security
 "Is this really secure? Can I trust you?"
 
 No, this probably isn't secure. No, you shouldn't trust me, it's possible that i've screwed up and the random data isn't actually that random.
-
